@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[api.controller=function(spUserAvatar) {
+        <client_script><![CDATA[api.controller=function(spUserAvatar, spEventPubSub,$scope) {
 	/* widget controller */
 	var c = this;
 
@@ -27,6 +27,17 @@
 			ev.avatar=rsp;
 		});
 	});	
+	
+	/* Subscribe to the PubSub service. A callback function passes the $event and data objects as parameters, executes when the event is heard */
+spEventPubSub.subscribe($scope, function($event, data) {
+
+	/* Find and return the event in the c.data.events array whose sys_id matches the sys_id in the 'args' parameter */
+	var selectedEvent = _.find(c.data.events, function(input){
+		return input.sys_id == data.sys_id; 
+	}) 
+
+	selectedEvent.active = true;
+});	
 	
 };	]]></client_script>
         <controller_as>c</controller_as>
@@ -95,14 +106,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-05-06 15:37:47</sys_created_on>
         <sys_id>85ecd7ccb088b0107f44d73a2ea7c613</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_name>Event Information</sys_name>
         <sys_package display_value="Cloud Dimensions Events" source="x_snc_cloudevents">77108b70610813007f44e59882b97a67</sys_package>
         <sys_policy/>
         <sys_scope display_value="Cloud Dimensions Events">77108b70610813007f44e59882b97a67</sys_scope>
         <sys_update_name>sp_widget_85ecd7ccb088b0107f44d73a2ea7c613</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-05-06 17:19:46</sys_updated_on>
+        <sys_updated_on>2021-05-07 17:53:37</sys_updated_on>
         <template><![CDATA[<form>
   
   <!-- Step 5. Display customized content based on user input -->
@@ -121,7 +132,9 @@
 
     <!-- Display each Event on a separate tab -->
     <uib-tab heading="{{event.name.display_value}}"
-             ng-repeat="event in c.data.events">
+             ng-repeat="event in c.data.events"
+             active="event.active"
+             ng-click="event.active=true">
       <div class="margin-bottom-10"></div>
 
       <!-- Bootstrap's Description List displays record details on a tab -->

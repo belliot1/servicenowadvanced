@@ -32,7 +32,7 @@
 	}	
 	return {
 		restrict: 'E', //Element
-		template: '<span uib-tooltip="{{date}}">{{ago}}</span> ago', //Output of directive
+		template: '<span  uib-tooltip="{{date}}">{{ago}}</span> ago', //Output of directive
 
 		scope: {  //create an isolated scope
 			//scope.date bound to the property passed in through the element
@@ -49,14 +49,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-05-06 15:11:04</sys_created_on>
         <sys_id>deb6d344b088b0107f44d73a2ea7c64a</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>spTimeAgo</sys_name>
         <sys_package display_value="Cloud Dimensions Events" source="x_snc_cloudevents">77108b70610813007f44e59882b97a67</sys_package>
         <sys_policy/>
         <sys_scope display_value="Cloud Dimensions Events">77108b70610813007f44e59882b97a67</sys_scope>
         <sys_update_name>sp_angular_provider_deb6d344b088b0107f44d73a2ea7c64a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-05-06 17:07:21</sys_updated_on>
+        <sys_updated_on>2021-05-07 15:13:40</sys_updated_on>
         <type>directive</type>
     </sp_angular_provider>
 </record_update>

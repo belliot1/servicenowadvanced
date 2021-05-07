@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_angular_provider">
+    <sp_angular_provider action="DELETE">
+        <name>spUserAvatar</name>
+        <script><![CDATA[function($http){
+	var getAvatar = function(userId){
+
+		//return the entire $http call
+		return $http.get('/api/now/live/profiles/sys_user.' + userId).then(function(response){
+
+			//retrieve avatar URL from the response
+			if(response.data.result && response.data.result.avatar){
+				var avatarPicture = response.data.result.avatar.replace("?t=small", "");
+
+				//return an object representing a style to be used on an HTML element
+				return {
+					'background-image': "url('" + avatarPicture + "')",
+					'color': 'transparent'
+				};
+			}
+		});
+	}
+	//return an object with one or more methods available to the Service
+	return{
+		getAvatar:getAvatar
+	}
+}]]></script>
+        <sys_class_name>sp_angular_provider</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-05-06 15:29:20</sys_created_on>
+        <sys_id>1bfad38cb088b0107f44d73a2ea7c64e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>spUserAvatar</sys_name>
+        <sys_package display_value="Cloud Dimensions Events" source="x_snc_cloudevents">77108b70610813007f44e59882b97a67</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Cloud Dimensions Events">77108b70610813007f44e59882b97a67</sys_scope>
+        <sys_update_name>sp_angular_provider_1bfad38cb088b0107f44d73a2ea7c64e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-05-06 15:29:20</sys_updated_on>
+        <type>service</type>
+    </sp_angular_provider>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Cloud Dimensions Events">77108b70610813007f44e59882b97a67</application>
+        <file_path/>
+        <instance_id>32648fc3db3328103e1000b5ca9619bd</instance_id>
+        <instance_name>spa-apr-971-018</instance_name>
+        <name>sp_angular_provider_1bfad38cb088b0107f44d73a2ea7c64e</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_angular_provider"&gt;&lt;sp_angular_provider action="INSERT_OR_UPDATE"&gt;&lt;name&gt;spUserAvatar&lt;/name&gt;&lt;script&gt;&lt;![CDATA[function($http){
+	var getAvatar = function(userId){
+
+		//return the entire $http call
+		return $http.get('/api/now/live/profiles/sys_user.' + userId).then(function(response){
+
+			//retrieve avatar URL from the response
+			if(response.data.result &amp;&amp; response.data.result.avatar){
+				var avatarPicture = response.data.result.avatar.replace("?t=small", "");
+
+				//return an object representing a style to be used on an HTML element
+				return {
+					'background-image': "url('" + avatarPicture + "')",
+					'color': 'transparent'
+				};
+			}
+		});
+	}
+	//return an object with one or more methods available to the Service
+	return{
+		getAvatar:getAvatar
+	}
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sp_angular_provider&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2021-05-06 15:29:20&lt;/sys_created_on&gt;&lt;sys_id&gt;1bfad38cb088b0107f44d73a2ea7c64e&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;spUserAvatar&lt;/sys_name&gt;&lt;sys_package display_value="Cloud Dimensions Events" source="x_snc_cloudevents"&gt;77108b70610813007f44e59882b97a67&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Cloud Dimensions Events"&gt;77108b70610813007f44e59882b97a67&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_angular_provider_1bfad38cb088b0107f44d73a2ea7c64e&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2021-05-06 15:29:20&lt;/sys_updated_on&gt;&lt;type&gt;service&lt;/type&gt;&lt;/sp_angular_provider&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>403513976</payload_hash>
+        <record_name>spUserAvatar</record_name>
+        <reverted_from/>
+        <source>1f1599a3b07360107f44d73a2ea7c687</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-05-06 15:29:20</sys_created_on>
+        <sys_id>bc2b138cb088b0107f44d73a2ea7c6b6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>179424c337f0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-05-06 15:29:20</sys_updated_on>
+        <type>Widget Angular Provider</type>
+        <update_guid>f42b138cfa88b010ab42422740f1b9b6</update_guid>
+        <update_guid_history>f42b138cfa88b010ab42422740f1b9b6:403513976</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="spUserAvatar">18d22cecb0c4f0107f44d73a2ea7c615</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-05-07 15:21:00</sys_created_on>
+        <sys_db_object display_value="" name="sp_angular_provider">sp_angular_provider</sys_db_object>
+        <sys_id>1037880fb5004b1183af8e6afe640631</sys_id>
+        <sys_metadata>1bfad38cb088b0107f44d73a2ea7c64e</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>spUserAvatar</sys_name>
+        <sys_package display_value="Cloud Dimensions Events" source="x_snc_cloudevents">77108b70610813007f44e59882b97a67</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Cloud Dimensions Events">77108b70610813007f44e59882b97a67</sys_scope>
+        <sys_scope_delete display_value="">138146ecda3441d3867e598472462431</sys_scope_delete>
+        <sys_update_name>sp_angular_provider_1bfad38cb088b0107f44d73a2ea7c64e</sys_update_name>
+        <sys_update_version display_value="sp_angular_provider_1bfad38cb088b0107f44d73a2ea7c64e">bc2b138cb088b0107f44d73a2ea7c6b6</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-05-07 15:21:00</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
